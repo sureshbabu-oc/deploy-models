@@ -1,9 +1,9 @@
 # deploy-models
 ## Deploy a Model & Prediction:
   ## Sklearn:
-  ##  Deploy:
+    Deploy:
       - d3x serve create -n <deployment-name> -r mlflow --model <model-name> --model_version 1 --depfilepath sklearn_titanic_serve.deploy
-  ##  Prediction:
+    Prediction:
       - python client/sklearn_titanic_client.py <profile-name> <deployment-name> client/test_file/test.csv
  ## Tensorflow:
     Deploy:
