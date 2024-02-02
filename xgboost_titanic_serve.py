@@ -21,7 +21,7 @@ nonnumeric_columns = ['Sex']
 def transform_feature(test_df, train_df):
     # Join the features from train and test together before imputing missing values,
     # in case their distribution is slightly different
-    big_X = train_df[feature_columns_to_use].append(test_df[feature_columns_to_use])
+    big_X = pd.concat([train_df[feature_columns_to_use], test_df[feature_columns_to_use]])
     big_X_imputed = DataFrameImputer().fit_transform(big_X)
     # XGBoost doesn't (yet) handle categorical features automatically, so we need to change
     # them to columns of integer values.
